@@ -1,0 +1,14 @@
+Error:  Error: No token provided
+    at authError (D:\E-visitors-main\attendance-backend-main\dist\middlewares\auth.js:12:19)
+    at expressAuthentication (D:\E-visitors-main\attendance-backend-main\dist\middlewares\auth.js:68:39)
+    at runAuthenticationMiddleware (D:\E-visitors-main\attendance-backend-main\dist\generated\routes.js:3145:50)
+    at Layer.handleRequest (D:\E-visitors-main\attendance-backend-main\node_modules\router\lib\layer.js:152:17)
+    at next (D:\E-visitors-main\attendance-backend-main\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (D:\E-visitors-main\attendance-backend-main\node_modules\router\lib\route.js:117:3)
+    at handle (D:\E-visitors-main\attendance-backend-main\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (D:\E-visitors-main\attendance-backend-main\node_modules\router\lib\layer.js:152:17)
+    at D:\E-visitors-main\attendance-backend-main\node_modules\router\index.js:295:15
+    at processParams (D:\E-visitors-main\attendance-backend-main\node_modules\router\index.js:582:12) {
+  statusCode: 401,
+  status: 401
+}
