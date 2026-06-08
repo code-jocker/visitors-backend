@@ -30,11 +30,13 @@ initializeDatabase()
 
     // cross origins for security
 
-    const allowedOrigins = [process.env.FRONTEND_URL || "http://localhost:3000",
+    const allowedOrigins = [
+        process.env.FRONTEND_URL || process.env.VITE_APP_URL || "http://localhost:3000",
         "https://backend.eac-se.com",
         "https://one.eac-se.com",
         "http://localhost:8080",
-        "http://localhost:5173"
+        "http://localhost:5173",
+        "https://evs-5m3p.onrender.com",
     ];
 
     app.use(cors({
