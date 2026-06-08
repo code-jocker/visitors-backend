@@ -6,7 +6,7 @@ dotenv.config();
 const DATABASE_URL = process.env.DATABASE_URL;
 
 const sequelizeOptions: any = {
-  dialect: DATABASE_URL ? "postgres" : config.database.dialect,
+  dialect: (DATABASE_URL ? "postgres" : config.database.dialect) as any,
   logging: false,
 };
 
@@ -21,7 +21,7 @@ const sequelize = DATABASE_URL
       {
         host: config.database.host,
         port: config.database.port,
-        dialect: config.database.dialect,
+        dialect: config.database.dialect as any,
         logging: false,
       }
     );
