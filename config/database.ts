@@ -8,6 +8,17 @@ const DATABASE_URL = process.env.DATABASE_URL;
 const sequelizeOptions: any = {
   dialect: (DATABASE_URL ? "postgres" : config.database.dialect) as any,
   logging: false,
+  // Render Postgres often requires SSL.
+  ...(DATABASE_URL
+    ? {
+        dialectOptions: {
+          ssl: {
+            require: true,
+            rejectUnauthorized: false,
+          },
+        },
+      }
+    : {}),
 };
 
 // Create Sequelize using DATABASE_URL when available (Render), otherwise fallback to individual vars.
