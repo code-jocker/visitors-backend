@@ -1,0 +1,7075 @@
+{
+	"openapi": "3.0.0",
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"ServiceResponse_any-Array_": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"items": {},
+						"type": "array",
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse_any-or-null_": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse_null_": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"anyOf": [],
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"VisitorCreateAttributes": {
+				"properties": {
+					"fullName": {
+						"type": "string"
+					},
+					"mobile": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"visitorCompany": {
+						"type": "string"
+					},
+					"purpose": {
+						"type": "string"
+					},
+					"department": {
+						"type": "string"
+					},
+					"hostName": {
+						"type": "string"
+					},
+					"idProofType": {
+						"type": "string"
+					},
+					"idNumber": {
+						"type": "string"
+					},
+					"passType": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string",
+						"enum": [
+							"IN",
+							"OUT",
+							"ACTIVE",
+							"CHECKED_IN",
+							"CHECKED_OUT",
+							"BLACKLISTED"
+						]
+					},
+					"badgeId": {
+						"type": "string"
+					},
+					"profilePhoto": {
+						"type": "string"
+					},
+					"entryTime": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"exitTime": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"fullName"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"PublicCheckInRequest": {
+				"properties": {
+					"visitor": {
+						"properties": {
+							"profilePhoto": {
+								"type": "string"
+							},
+							"idNumber": {
+								"type": "string"
+							},
+							"idProofType": {
+								"type": "string"
+							},
+							"hostName": {
+								"type": "string"
+							},
+							"department": {
+								"type": "string"
+							},
+							"purpose": {
+								"type": "string"
+							},
+							"visitorCompany": {
+								"type": "string"
+							},
+							"email": {
+								"type": "string"
+							},
+							"mobile": {
+								"type": "string"
+							},
+							"fullName": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"fullName"
+						],
+						"type": "object"
+					},
+					"verificationMode": {
+						"type": "string"
+					},
+					"department": {
+						"type": "string"
+					},
+					"badgeType": {
+						"type": "string",
+						"enum": [
+							"QR",
+							"RFID"
+						]
+					},
+					"visitorType": {
+						"type": "string"
+					},
+					"date": {
+						"type": "string"
+					},
+					"time": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"visitor"
+				],
+				"type": "object",
+				"additionalProperties": {}
+			},
+			"ServiceResponse_any_": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CheckInRequest": {
+				"properties": {
+					"visitor": {
+						"properties": {
+							"idNumber": {
+								"type": "string"
+							},
+							"idProofType": {
+								"type": "string"
+							},
+							"hostName": {
+								"type": "string"
+							},
+							"department": {
+								"type": "string"
+							},
+							"purpose": {
+								"type": "string"
+							},
+							"visitorCompany": {
+								"type": "string"
+							},
+							"email": {
+								"type": "string"
+							},
+							"mobile": {
+								"type": "string"
+							},
+							"fullName": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"fullName"
+						],
+						"type": "object"
+					},
+					"verificationMode": {
+						"type": "string"
+					},
+					"appointmentId": {
+						"type": "string"
+					},
+					"department": {
+						"type": "string"
+					},
+					"badgeType": {
+						"type": "string",
+						"enum": [
+							"QR",
+							"RFID"
+						]
+					}
+				},
+				"required": [
+					"visitor"
+				],
+				"type": "object",
+				"additionalProperties": {}
+			},
+			"VisitorUpdateAttributes": {
+				"properties": {
+					"fullName": {
+						"type": "string"
+					},
+					"mobile": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"visitorCompany": {
+						"type": "string"
+					},
+					"purpose": {
+						"type": "string"
+					},
+					"department": {
+						"type": "string"
+					},
+					"hostName": {
+						"type": "string"
+					},
+					"idProofType": {
+						"type": "string"
+					},
+					"idNumber": {
+						"type": "string"
+					},
+					"passType": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string",
+						"enum": [
+							"IN",
+							"OUT",
+							"ACTIVE",
+							"CHECKED_IN",
+							"CHECKED_OUT",
+							"BLACKLISTED"
+						]
+					},
+					"badgeId": {
+						"type": "string"
+					},
+					"profilePhoto": {
+						"type": "string"
+					},
+					"entryTime": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"exitTime": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UserStatus": {
+				"type": "string",
+				"enum": [
+					"active",
+					"inactive",
+					"suspended",
+					"pending",
+					"deleted",
+					"archived",
+					"rejected",
+					"blacklisted"
+				]
+			},
+			"IPermissionAttributes": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string",
+						"nullable": true
+					},
+					"createdAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"updatedAt": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"id",
+					"name",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IRoleAttributes": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string",
+						"nullable": true
+					},
+					"permissions": {
+						"items": {
+							"$ref": "#/components/schemas/IPermissionAttributes"
+						},
+						"type": "array"
+					},
+					"createdAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"updatedAt": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"id",
+					"name",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"IUserAttributes": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"fullName": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"phoneNumber": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number",
+								"format": "double"
+							}
+						]
+					},
+					"status": {
+						"$ref": "#/components/schemas/UserStatus"
+					},
+					"roles": {
+						"items": {
+							"$ref": "#/components/schemas/IRoleAttributes"
+						},
+						"type": "array"
+					},
+					"profilePicture": {
+						"type": "string"
+					},
+					"dateOfBirth": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"nationalId": {
+						"type": "string"
+					},
+					"fingerPrint": {
+						"type": "string"
+					},
+					"face": {
+						"type": "string"
+					},
+					"voice": {
+						"type": "string"
+					},
+					"signature": {
+						"type": "string"
+					},
+					"passport": {
+						"type": "string"
+					},
+					"motion": {
+						"type": "string"
+					},
+					"igipande": {
+						"type": "string"
+					},
+					"ocr": {
+						"type": "string"
+					},
+					"gesture": {
+						"type": "string"
+					},
+					"pupil": {
+						"type": "string"
+					},
+					"otherBiometric": {
+						"type": "string"
+					},
+					"nationality": {
+						"type": "string"
+					},
+					"country": {
+						"type": "string"
+					},
+					"province": {
+						"type": "string"
+					},
+					"district": {
+						"type": "string"
+					},
+					"sector": {
+						"type": "string"
+					},
+					"cell": {
+						"type": "string"
+					},
+					"village": {
+						"type": "string"
+					},
+					"personalInChargeNationalId": {
+						"type": "string"
+					},
+					"personalInChargeName": {
+						"type": "string"
+					},
+					"personalInChargePhone": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number",
+								"format": "double"
+							}
+						]
+					},
+					"personalInChargeEmail": {
+						"type": "string"
+					},
+					"personalInChargeRelation": {
+						"type": "string"
+					},
+					"personalInChargeOtherDetails": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"updatedAt": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"id",
+					"fullName",
+					"email",
+					"password",
+					"status"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UsersListResponse": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"items": {
+							"$ref": "#/components/schemas/IUserAttributes"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UserResponse": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"allOf": [
+							{
+								"$ref": "#/components/schemas/IUserAttributes"
+							}
+						],
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"AttendanceInfo": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"userId": {
+						"type": "string"
+					},
+					"checkIn": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"date": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"userId",
+					"checkIn",
+					"date",
+					"status"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UserWithAttendanceResponse": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"properties": {
+							"assignedCardId": {
+								"type": "string",
+								"nullable": true
+							},
+							"equipmentIds": {
+								"items": {
+									"type": "string"
+								},
+								"type": "array"
+							},
+							"isNewUser": {
+								"type": "boolean"
+							},
+							"attendance": {
+								"allOf": [
+									{
+										"$ref": "#/components/schemas/AttendanceInfo"
+									}
+								],
+								"nullable": true
+							},
+							"user": {
+								"allOf": [
+									{
+										"$ref": "#/components/schemas/IUserAttributes"
+									}
+								],
+								"nullable": true
+							}
+						},
+						"required": [
+							"assignedCardId",
+							"equipmentIds",
+							"isNewUser",
+							"attendance",
+							"user"
+						],
+						"type": "object",
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"EquipmentAssignment": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"serialNumber": {
+						"type": "string"
+					},
+					"type": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"name",
+					"serialNumber"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UserCreateRequest": {
+				"properties": {
+					"fullName": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"scannedId": {
+						"type": "string"
+					},
+					"phoneNumber": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string"
+					},
+					"category": {
+						"type": "string"
+					},
+					"badge": {
+						"type": "string"
+					},
+					"role": {
+						"type": "string"
+					},
+					"company": {
+						"type": "string"
+					},
+					"department": {
+						"type": "string"
+					},
+					"nationalId": {
+						"type": "string"
+					},
+					"equipments": {
+						"items": {
+							"$ref": "#/components/schemas/EquipmentAssignment"
+						},
+						"type": "array"
+					},
+					"cardId": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"fullName",
+					"scannedId"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UserUpdateRequest": {
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"fullName": {
+						"type": "string"
+					},
+					"phoneNumber": {
+						"type": "string"
+					},
+					"department": {
+						"type": "string"
+					},
+					"role": {
+						"type": "string"
+					},
+					"category": {
+						"type": "string"
+					},
+					"company": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"PermissionResponse": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string",
+						"nullable": true
+					},
+					"createdAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"updatedAt": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"id",
+					"name"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"RoleResponse": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string",
+						"nullable": true
+					},
+					"category": {
+						"type": "string",
+						"nullable": true
+					},
+					"createdAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"updatedAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"permissions": {
+						"items": {
+							"$ref": "#/components/schemas/PermissionResponse"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"id",
+					"name"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse_RoleResponse-or-null_": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"allOf": [
+							{
+								"$ref": "#/components/schemas/RoleResponse"
+							}
+						],
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"RoleCreateRequest": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string",
+						"nullable": true
+					},
+					"category": {
+						"type": "string",
+						"nullable": true
+					},
+					"permissionIds": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"name"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"RoleUpdateRequest": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string",
+						"nullable": true
+					},
+					"category": {
+						"type": "string",
+						"nullable": true
+					},
+					"permissionIds": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"permissions": {
+						"items": {},
+						"type": "array"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse_PermissionResponse-Array_": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"items": {
+							"$ref": "#/components/schemas/PermissionResponse"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse_PermissionResponse-or-null_": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"allOf": [
+							{
+								"$ref": "#/components/schemas/PermissionResponse"
+							}
+						],
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"PermissionCreateRequest": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string",
+						"nullable": true
+					}
+				},
+				"required": [
+					"name"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"PermissionUpdateRequest": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string",
+						"nullable": true
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"HandoverResponse": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"outgoingUser": {
+						"type": "string"
+					},
+					"incomingUser": {
+						"type": "string"
+					},
+					"handOverShift": {
+						"type": "string"
+					},
+					"handOverDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"handOverTime": {
+						"type": "string"
+					},
+					"handOverItems": {
+						"type": "string"
+					},
+					"handOverDescription": {
+						"type": "string",
+						"nullable": true
+					},
+					"status": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"updatedAt": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"id",
+					"outgoingUser",
+					"incomingUser",
+					"handOverShift",
+					"handOverDate",
+					"handOverTime",
+					"handOverItems",
+					"status"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse_HandoverResponse-Array-or-null_": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"items": {
+							"$ref": "#/components/schemas/HandoverResponse"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse_HandoverResponse_": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"allOf": [
+							{
+								"$ref": "#/components/schemas/HandoverResponse"
+							}
+						],
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse_HandoverResponse-or-null_": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"allOf": [
+							{
+								"$ref": "#/components/schemas/HandoverResponse"
+							}
+						],
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"HandoverCreateAttributes": {
+				"properties": {
+					"outgoingUser": {
+						"type": "string"
+					},
+					"incomingUser": {
+						"type": "string"
+					},
+					"equipmentId": {
+						"type": "string",
+						"nullable": true
+					},
+					"handOverDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"handOverTime": {
+						"type": "string"
+					},
+					"handOverDescription": {
+						"type": "string",
+						"nullable": true
+					},
+					"handOverItems": {
+						"type": "string"
+					},
+					"handOverShift": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"outgoingUser",
+					"incomingUser",
+					"handOverDate",
+					"handOverTime",
+					"handOverItems",
+					"handOverShift",
+					"status"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"HandoverUpdateAttributes": {
+				"properties": {
+					"outgoingUser": {
+						"type": "string"
+					},
+					"incomingUser": {
+						"type": "string"
+					},
+					"equipmentId": {
+						"type": "string",
+						"nullable": true
+					},
+					"handOverDate": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"handOverTime": {
+						"type": "string"
+					},
+					"handOverDescription": {
+						"type": "string",
+						"nullable": true
+					},
+					"handOverItems": {
+						"type": "string"
+					},
+					"handOverShift": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"FaceVerifyRequest": {
+				"properties": {
+					"department": {
+						"type": "string"
+					},
+					"faceImageBase64": {
+						"type": "string"
+					},
+					"apiKey": {
+						"type": "string"
+					}
+				},
+				"type": "object"
+			},
+			"FaceVerifyResult": {
+				"properties": {
+					"profilePhoto": {
+						"type": "string"
+					},
+					"department": {
+						"type": "string"
+					},
+					"fullName": {
+						"type": "string"
+					},
+					"userId": {
+						"type": "string"
+					},
+					"entityType": {
+						"type": "string",
+						"enum": [
+							"employee",
+							"visitor",
+							"unknown"
+						]
+					},
+					"matched": {
+						"type": "boolean"
+					}
+				},
+				"required": [
+					"matched"
+				],
+				"type": "object"
+			},
+			"FaceVerifyError": {
+				"properties": {
+					"error": {
+						"type": "string"
+					},
+					"matched": {
+						"type": "boolean",
+						"enum": [
+							false
+						],
+						"nullable": false
+					}
+				},
+				"required": [
+					"matched"
+				],
+				"type": "object"
+			},
+			"ServiceResponse_FaceVerifyResult-or-FaceVerifyError_": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"anyOf": [
+							{
+								"$ref": "#/components/schemas/FaceVerifyResult"
+							},
+							{
+								"$ref": "#/components/schemas/FaceVerifyError"
+							}
+						],
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"EventResponse": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"title": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string",
+						"nullable": true
+					},
+					"eventDate": {
+						"type": "string"
+					},
+					"eventTime": {
+						"type": "string"
+					},
+					"timeDuration": {
+						"type": "string"
+					},
+					"eventLocation": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"updatedAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"status": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"title"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse_EventResponse-or-null_": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"allOf": [
+							{
+								"$ref": "#/components/schemas/EventResponse"
+							}
+						],
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"EventCreateRequest": {
+				"properties": {
+					"title": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string",
+						"nullable": true
+					},
+					"hoster": {
+						"type": "string"
+					},
+					"eventDate": {
+						"type": "string"
+					},
+					"eventTime": {
+						"type": "string"
+					},
+					"expectedAttendees": {
+						"type": "string"
+					},
+					"timeDuration": {
+						"type": "string"
+					},
+					"eventLocation": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"title"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse_EventResponse-Array-or-null_": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"items": {
+							"$ref": "#/components/schemas/EventResponse"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"EventUpdateRequest": {
+				"properties": {
+					"title": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string",
+						"nullable": true
+					},
+					"eventDate": {
+						"type": "string"
+					},
+					"hoster": {
+						"type": "string"
+					},
+					"eventTime": {
+						"type": "string"
+					},
+					"expectedAttendees": {
+						"type": "string"
+					},
+					"timeDuration": {
+						"type": "string"
+					},
+					"eventLocation": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"EquipmentResponse": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string",
+						"nullable": true
+					},
+					"serialNumber": {
+						"type": "string",
+						"nullable": true
+					},
+					"quantity": {
+						"type": "number",
+						"format": "double"
+					},
+					"status": {
+						"type": "string"
+					},
+					"assignedTo": {
+						"type": "string",
+						"nullable": true
+					},
+					"createdAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"updatedAt": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"id",
+					"name",
+					"status"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse_EquipmentResponse-Array-or-null_": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"items": {
+							"$ref": "#/components/schemas/EquipmentResponse"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse_EquipmentResponse-or-null_": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"allOf": [
+							{
+								"$ref": "#/components/schemas/EquipmentResponse"
+							}
+						],
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse_EquipmentResponse_": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"allOf": [
+							{
+								"$ref": "#/components/schemas/EquipmentResponse"
+							}
+						],
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"equipmentCreateAttributes": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string",
+						"nullable": true
+					},
+					"serialNumber": {
+						"type": "string"
+					},
+					"quantity": {
+						"type": "number",
+						"format": "double"
+					},
+					"status": {
+						"type": "string"
+					},
+					"assignedTo": {
+						"type": "string",
+						"nullable": true
+					}
+				},
+				"required": [
+					"name"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"equipmentUpdateAttributes": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string",
+						"nullable": true
+					},
+					"serialNumber": {
+						"type": "string",
+						"nullable": true
+					},
+					"quantity": {
+						"type": "number",
+						"format": "double"
+					},
+					"status": {
+						"type": "string"
+					},
+					"assignedTo": {
+						"type": "string",
+						"nullable": true
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CardResponse": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"cardNumber": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string"
+					},
+					"doneBy": {
+						"type": "string"
+					},
+					"location": {
+						"type": "string"
+					},
+					"branch": {
+						"type": "string"
+					},
+					"assignedTo": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"updatedAt": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"id",
+					"cardNumber",
+					"status"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CardListResponse": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"items": {
+							"$ref": "#/components/schemas/CardResponse"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CardSingleResponse": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"allOf": [
+							{
+								"$ref": "#/components/schemas/CardResponse"
+							}
+						],
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CreateCardRequest": {
+				"properties": {
+					"cardNumber": {
+						"type": "string"
+					},
+					"location": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string"
+					},
+					"branch": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string",
+						"enum": [
+							"assigned",
+							"available",
+							"maintenance"
+						]
+					},
+					"doneBy": {
+						"type": "string"
+					},
+					"assignedTo": {
+						"type": "string"
+					},
+					"assignedAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"lastUsed": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"cardNumber",
+					"status"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateCardRequest": {
+				"properties": {
+					"cardNumber": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string"
+					},
+					"location": {
+						"type": "string"
+					},
+					"branch": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string",
+						"enum": [
+							"assigned",
+							"available",
+							"maintenance"
+						]
+					},
+					"doneBy": {
+						"type": "string"
+					},
+					"assignedTo": {
+						"type": "string"
+					},
+					"assignedAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"lastUsed": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"LoginRequest": {
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"phone": {
+						"type": "string"
+					},
+					"type": {
+						"type": "string",
+						"enum": [
+							"phone",
+							"email"
+						]
+					}
+				},
+				"required": [
+					"password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Pick_IUserAttributes.Exclude_keyofIUserAttributes.password-or-googleId__": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"fullName": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"phoneNumber": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number",
+								"format": "double"
+							}
+						]
+					},
+					"status": {
+						"$ref": "#/components/schemas/UserStatus"
+					},
+					"roles": {
+						"items": {
+							"$ref": "#/components/schemas/IRoleAttributes"
+						},
+						"type": "array"
+					},
+					"profilePicture": {
+						"type": "string"
+					},
+					"dateOfBirth": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"nationalId": {
+						"type": "string"
+					},
+					"fingerPrint": {
+						"type": "string"
+					},
+					"face": {
+						"type": "string"
+					},
+					"voice": {
+						"type": "string"
+					},
+					"signature": {
+						"type": "string"
+					},
+					"passport": {
+						"type": "string"
+					},
+					"motion": {
+						"type": "string"
+					},
+					"igipande": {
+						"type": "string"
+					},
+					"ocr": {
+						"type": "string"
+					},
+					"gesture": {
+						"type": "string"
+					},
+					"pupil": {
+						"type": "string"
+					},
+					"otherBiometric": {
+						"type": "string"
+					},
+					"nationality": {
+						"type": "string"
+					},
+					"country": {
+						"type": "string"
+					},
+					"province": {
+						"type": "string"
+					},
+					"district": {
+						"type": "string"
+					},
+					"sector": {
+						"type": "string"
+					},
+					"cell": {
+						"type": "string"
+					},
+					"village": {
+						"type": "string"
+					},
+					"personalInChargeNationalId": {
+						"type": "string"
+					},
+					"personalInChargeName": {
+						"type": "string"
+					},
+					"personalInChargePhone": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number",
+								"format": "double"
+							}
+						]
+					},
+					"personalInChargeEmail": {
+						"type": "string"
+					},
+					"personalInChargeRelation": {
+						"type": "string"
+					},
+					"personalInChargeOtherDetails": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"updatedAt": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"id",
+					"fullName",
+					"email",
+					"status"
+				],
+				"type": "object",
+				"description": "From T, pick a set of properties whose keys are in the union K"
+			},
+			"IUserResponse": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"fullName": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"phoneNumber": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number",
+								"format": "double"
+							}
+						]
+					},
+					"status": {
+						"$ref": "#/components/schemas/UserStatus"
+					},
+					"roles": {
+						"items": {},
+						"type": "array"
+					},
+					"profilePicture": {
+						"type": "string"
+					},
+					"dateOfBirth": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"nationalId": {
+						"type": "string"
+					},
+					"fingerPrint": {
+						"type": "string"
+					},
+					"face": {
+						"type": "string"
+					},
+					"voice": {
+						"type": "string"
+					},
+					"signature": {
+						"type": "string"
+					},
+					"passport": {
+						"type": "string"
+					},
+					"motion": {
+						"type": "string"
+					},
+					"igipande": {
+						"type": "string"
+					},
+					"ocr": {
+						"type": "string"
+					},
+					"gesture": {
+						"type": "string"
+					},
+					"pupil": {
+						"type": "string"
+					},
+					"otherBiometric": {
+						"type": "string"
+					},
+					"nationality": {
+						"type": "string"
+					},
+					"country": {
+						"type": "string"
+					},
+					"province": {
+						"type": "string"
+					},
+					"district": {
+						"type": "string"
+					},
+					"sector": {
+						"type": "string"
+					},
+					"cell": {
+						"type": "string"
+					},
+					"village": {
+						"type": "string"
+					},
+					"personalInChargeNationalId": {
+						"type": "string"
+					},
+					"personalInChargeName": {
+						"type": "string"
+					},
+					"personalInChargePhone": {
+						"anyOf": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "number",
+								"format": "double"
+							}
+						]
+					},
+					"personalInChargeEmail": {
+						"type": "string"
+					},
+					"personalInChargeRelation": {
+						"type": "string"
+					},
+					"personalInChargeOtherDetails": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"updatedAt": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"id",
+					"fullName",
+					"email",
+					"status"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse__user-IUserResponse-or-null__": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"properties": {
+							"user": {
+								"allOf": [
+									{
+										"$ref": "#/components/schemas/IUserResponse"
+									}
+								],
+								"nullable": true
+							}
+						},
+						"required": [
+							"user"
+						],
+						"type": "object",
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"SignupRequest": {
+				"properties": {
+					"fullName": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"roleType": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"phone": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"fullName",
+					"password",
+					"phone"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse__user-IUserResponse-or-null--accessToken_63_-string--refreshToken_63_-string__": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"properties": {
+							"refreshToken": {
+								"type": "string"
+							},
+							"accessToken": {
+								"type": "string"
+							},
+							"user": {
+								"allOf": [
+									{
+										"$ref": "#/components/schemas/IUserResponse"
+									}
+								],
+								"nullable": true
+							}
+						},
+						"required": [
+							"user"
+						],
+						"type": "object",
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse__exists-boolean__": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"properties": {
+							"exists": {
+								"type": "boolean"
+							}
+						},
+						"required": [
+							"exists"
+						],
+						"type": "object",
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse__accessToken-string--refreshToken-string__": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"properties": {
+							"refreshToken": {
+								"type": "string"
+							},
+							"accessToken": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"refreshToken",
+							"accessToken"
+						],
+						"type": "object",
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"AttendanceResponse": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"userId": {
+						"type": "string"
+					},
+					"checkIn": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"checkOut": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"hoster": {
+						"type": "string"
+					},
+					"badge": {
+						"type": "string"
+					},
+					"date": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string"
+					},
+					"note": {
+						"type": "string"
+					},
+					"user": {},
+					"createdAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"updatedAt": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"id",
+					"userId",
+					"checkIn",
+					"date",
+					"status"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"AttendanceListResponse": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"items": {
+							"$ref": "#/components/schemas/AttendanceResponse"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"AttendanceSingleResponse": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"allOf": [
+							{
+								"$ref": "#/components/schemas/AttendanceResponse"
+							}
+						],
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CheckOutRequest": {
+				"properties": {
+					"note": {
+						"type": "string"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateAttendanceRequest": {
+				"properties": {
+					"status": {
+						"type": "string",
+						"enum": [
+							"present",
+							"late",
+							"left_early",
+							"absent"
+						]
+					},
+					"note": {
+						"type": "string"
+					},
+					"checkOut": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"checkIn": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"AppointmentResponse": {
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"userId": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string"
+					},
+					"purpose": {
+						"type": "string"
+					},
+					"host": {
+						"type": "string"
+					},
+					"department": {
+						"type": "string"
+					},
+					"cancelReason": {
+						"type": "string"
+					},
+					"reasonToReschedule": {
+						"type": "string"
+					},
+					"appointmentDate": {
+						"type": "string"
+					},
+					"appointmentTime": {
+						"type": "string"
+					},
+					"user": {
+						"properties": {
+							"phoneNumber": {
+								"type": "string"
+							},
+							"department": {
+								"type": "string"
+							},
+							"email": {
+								"type": "string"
+							},
+							"fullName": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"phoneNumber",
+							"department",
+							"fullName"
+						],
+						"type": "object"
+					},
+					"timeDuration": {
+						"type": "string"
+					},
+					"appointmentLocation": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"updatedAt": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"id",
+					"userId",
+					"user"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse_AppointmentResponse-Array_": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"items": {
+							"$ref": "#/components/schemas/AppointmentResponse"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ServiceResponse_AppointmentResponse-or-null_": {
+				"properties": {
+					"success": {
+						"type": "boolean"
+					},
+					"message": {
+						"type": "string"
+					},
+					"result": {
+						"allOf": [
+							{
+								"$ref": "#/components/schemas/AppointmentResponse"
+							}
+						],
+						"nullable": true
+					},
+					"statusCode": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"success",
+					"message",
+					"result",
+					"statusCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"AppointmentCreateAttributes": {
+				"properties": {
+					"userId": {
+						"type": "string"
+					},
+					"purpose": {
+						"type": "string"
+					},
+					"host": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string",
+						"enum": [
+							"pending",
+							"confirmed",
+							"canceled",
+							"onhold",
+							"completed"
+						]
+					},
+					"department": {
+						"type": "string"
+					},
+					"company": {
+						"type": "string"
+					},
+					"appointmentDate": {
+						"type": "string"
+					},
+					"appointmentTime": {
+						"type": "string"
+					},
+					"timeDuration": {
+						"type": "string"
+					},
+					"appointmentLocation": {
+						"type": "string"
+					},
+					"note": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"userId",
+					"purpose",
+					"host",
+					"status",
+					"department",
+					"company",
+					"appointmentDate",
+					"appointmentTime",
+					"timeDuration",
+					"appointmentLocation",
+					"note"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateAppointmentAttributes": {
+				"properties": {
+					"userId": {
+						"type": "string"
+					},
+					"purpose": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string",
+						"enum": [
+							"pending",
+							"confirmed",
+							"canceled",
+							"onhold",
+							"completed"
+						]
+					},
+					"host": {
+						"type": "string"
+					},
+					"department": {
+						"type": "string"
+					},
+					"company": {
+						"type": "string"
+					},
+					"cancelReason": {
+						"type": "string"
+					},
+					"reasonToReschedule": {
+						"type": "string"
+					},
+					"appointmentDate": {
+						"type": "string"
+					},
+					"appointmentTime": {
+						"type": "string"
+					},
+					"timeDuration": {
+						"type": "string"
+					},
+					"appointmentLocation": {
+						"type": "string"
+					},
+					"note": {
+						"type": "string"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {
+			"jwt": {
+				"type": "apiKey",
+				"name": "Authorization",
+				"in": "header",
+				"description": "JWT token (Bearer <token>)"
+			}
+		}
+	},
+	"info": {
+		"title": "Attendance Backend API",
+		"version": "1.0.0",
+		"description": "API documentation for attendance management system",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {
+			"name": "API Support"
+		}
+	},
+	"paths": {
+		"/api/visitors": {
+			"get": {
+				"operationId": "GetAllVisitors",
+				"responses": {
+					"200": {
+						"description": "Visitors retrieved successfully",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_any-Array_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Visitors"
+				],
+				"security": [
+					{
+						"jwt": [
+							"visitor:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "limit",
+						"required": false,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "status",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "department",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"post": {
+				"operationId": "CreateVisitor",
+				"responses": {
+					"201": {
+						"description": "Visitor created successfully",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_any-or-null_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Visitor fullName is required",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Visitors"
+				],
+				"security": [
+					{
+						"jwt": [
+							"visitor:create"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/VisitorCreateAttributes"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/visitors/recent-taps": {
+			"get": {
+				"operationId": "GetRecentTaps",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_any-Array_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Visitors"
+				],
+				"security": [
+					{
+						"jwt": [
+							"visitor:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "department",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "searchType",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"name",
+								"phone",
+								"voice"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "limit",
+						"required": false,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		},
+		"/api/visitors/search": {
+			"get": {
+				"operationId": "SearchVisitors",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_any-Array_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Visitors"
+				],
+				"security": [
+					{
+						"jwt": [
+							"visitor:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "query",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "searchType",
+						"required": false,
+						"schema": {
+							"default": "name",
+							"type": "string",
+							"enum": [
+								"name",
+								"phone",
+								"voice"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "department",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "limit",
+						"required": false,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		},
+		"/api/visitors/public-check-in": {
+			"post": {
+				"operationId": "PublicCheckIn",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_any_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_any_"
+								}
+							}
+						}
+					},
+					"403": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_any_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Visitors"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/PublicCheckInRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/visitors/check-in": {
+			"post": {
+				"operationId": "CheckIn",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_any_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_any_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Visitors"
+				],
+				"security": [
+					{
+						"jwt": [
+							"visitor:create"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CheckInRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/visitors/check-out": {
+			"post": {
+				"operationId": "CheckOut",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_any_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_any_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Visitors"
+				],
+				"security": [
+					{
+						"jwt": [
+							"visitor:update"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"badgeId": {
+										"type": "string"
+									},
+									"visitorId": {
+										"type": "string"
+									}
+								},
+								"type": "object"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/visitors/{visitorId}": {
+			"get": {
+				"operationId": "GetVisitorById",
+				"responses": {
+					"200": {
+						"description": "Visitor retrieved successfully",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_any-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Visitor not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Visitors"
+				],
+				"security": [
+					{
+						"jwt": [
+							"visitor:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "visitorId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateVisitor",
+				"responses": {
+					"200": {
+						"description": "Visitor updated successfully",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_any-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Visitor not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Visitors"
+				],
+				"security": [
+					{
+						"jwt": [
+							"visitor:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "visitorId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/VisitorUpdateAttributes"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteVisitor",
+				"responses": {
+					"200": {
+						"description": "Visitor deleted successfully",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Visitor not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Visitors"
+				],
+				"security": [
+					{
+						"jwt": [
+							"visitor:delete"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "visitorId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/users": {
+			"get": {
+				"operationId": "GetAllUsers",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UsersListResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Users"
+				],
+				"security": [
+					{
+						"jwt": [
+							"user:list"
+						]
+					}
+				],
+				"parameters": []
+			},
+			"post": {
+				"operationId": "CreateUser",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserWithAttendanceResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Users"
+				],
+				"security": [
+					{
+						"jwt": [
+							"user:create"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UserCreateRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/users/{id}": {
+			"get": {
+				"operationId": "GetUserById",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Users"
+				],
+				"security": [
+					{
+						"jwt": [
+							"user:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateUser",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Users"
+				],
+				"security": [
+					{
+						"jwt": [
+							"user:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UserUpdateRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/users/{id}/equipment": {
+			"get": {
+				"operationId": "GetUserEquipment",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Users"
+				],
+				"security": [
+					{
+						"jwt": [
+							"user:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/users/{id}/activate": {
+			"put": {
+				"operationId": "ActivateUser",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Users"
+				],
+				"security": [
+					{
+						"jwt": [
+							"user:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/users/{id}/suspend": {
+			"put": {
+				"operationId": "SuspendUser",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Users"
+				],
+				"security": [
+					{
+						"jwt": [
+							"user:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/users/{id}/delete": {
+			"delete": {
+				"operationId": "DeleteUser",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Users"
+				],
+				"security": [
+					{
+						"jwt": [
+							"user:delete"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/roles": {
+			"get": {
+				"operationId": "ListRoles",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Roles"
+				],
+				"security": [
+					{
+						"jwt": [
+							"role:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "page",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "limit",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "search",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"post": {
+				"operationId": "CreateRole",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_RoleResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Roles"
+				],
+				"security": [
+					{
+						"jwt": [
+							"role:create"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/RoleCreateRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/roles/{roleId}": {
+			"get": {
+				"operationId": "GetRoleById",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_RoleResponse-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Role not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_RoleResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Roles"
+				],
+				"security": [
+					{
+						"jwt": [
+							"role:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "roleId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateRole",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_RoleResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Roles"
+				],
+				"security": [
+					{
+						"jwt": [
+							"role:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "roleId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/RoleUpdateRequest"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteRole",
+				"responses": {
+					"204": {
+						"description": "No Content",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Roles"
+				],
+				"security": [
+					{
+						"jwt": [
+							"role:delete"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "roleId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/roles/{roleId}/permissions/{permissionId}": {
+			"delete": {
+				"operationId": "RemovePermissionFromRole",
+				"responses": {
+					"204": {
+						"description": "No Content",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Roles"
+				],
+				"security": [
+					{
+						"jwt": [
+							"role:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "roleId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "permissionId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/permissions": {
+			"get": {
+				"operationId": "GetAllPermissions",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_PermissionResponse-Array_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Permissions"
+				],
+				"security": [],
+				"parameters": []
+			},
+			"post": {
+				"operationId": "CreatePermission",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_PermissionResponse-or-null_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_PermissionResponse-or-null_"
+								}
+							}
+						}
+					},
+					"409": {
+						"description": "Permission already exists",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_PermissionResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Permissions"
+				],
+				"security": [
+					{
+						"jwt": [
+							"permission:create"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/PermissionCreateRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/permissions/{permissionId}": {
+			"get": {
+				"operationId": "GetPermissionById",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_PermissionResponse-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Permission not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_PermissionResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Permissions"
+				],
+				"security": [
+					{
+						"jwt": [
+							"permission:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "permissionId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdatePermission",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_PermissionResponse-or-null_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_PermissionResponse-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Permission not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_PermissionResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Permissions"
+				],
+				"security": [
+					{
+						"jwt": [
+							"permission:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "permissionId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/PermissionUpdateRequest"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeletePermission",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Permission not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					},
+					"409": {
+						"description": "cannot delete permission that is assigned to roles",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Permissions"
+				],
+				"security": [
+					{
+						"jwt": [
+							"permission:delete"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "permissionId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/handover": {
+			"get": {
+				"operationId": "GetAllHandovers",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_HandoverResponse-Array-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Handover not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_HandoverResponse_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"HandOver"
+				],
+				"security": [
+					{
+						"jwt": [
+							"handover:read"
+						]
+					}
+				],
+				"parameters": []
+			},
+			"post": {
+				"operationId": "CreateHandover",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_HandoverResponse-or-null_"
+								}
+							}
+						}
+					},
+					"409": {
+						"description": "Handover already exists",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"HandOver"
+				],
+				"security": [
+					{
+						"jwt": [
+							"handover:create"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/HandoverCreateAttributes"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/handover/{handoverId}": {
+			"get": {
+				"operationId": "GetHandoverById",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_HandoverResponse-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Handover not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_HandoverResponse_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"HandOver"
+				],
+				"security": [
+					{
+						"jwt": [
+							"handover:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handoverId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateHandover",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_HandoverResponse-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Handover not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"HandOver"
+				],
+				"security": [
+					{
+						"jwt": [
+							"handover:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handoverId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/HandoverUpdateAttributes"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteHandover",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_HandoverResponse-or-null_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_HandoverResponse-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Handover not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_HandoverResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"HandOver"
+				],
+				"security": [
+					{
+						"jwt": [
+							"handover:delete"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handoverId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/handover/{handoverId}/confirm": {
+			"put": {
+				"operationId": "ConfirmHandleOver",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_HandoverResponse-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Handover not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"HandOver"
+				],
+				"security": [
+					{
+						"jwt": [
+							"handover:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handoverId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/handover/{handoverId}/complete": {
+			"put": {
+				"operationId": "CompleteHandleOver",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_HandoverResponse-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Handover not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"HandOver"
+				],
+				"security": [
+					{
+						"jwt": [
+							"handover:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handoverId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/handover/{handoverId}/cancel": {
+			"put": {
+				"operationId": "CancelHandleOver",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_HandoverResponse-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Handover not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"HandOver"
+				],
+				"security": [
+					{
+						"jwt": [
+							"handover:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "handoverId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/faces/verify": {
+			"post": {
+				"operationId": "VerifyFace",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_FaceVerifyResult-or-FaceVerifyError_"
+								}
+							}
+						}
+					},
+					"204": {
+						"description": "No content"
+					},
+					"400": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_FaceVerifyResult-or-FaceVerifyError_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Faces"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/FaceVerifyRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/events": {
+			"post": {
+				"operationId": "CreateEvent",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Events"
+				],
+				"security": [
+					{
+						"jwt": [
+							"event:create"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/EventCreateRequest"
+							}
+						}
+					}
+				}
+			},
+			"get": {
+				"operationId": "GetAllEvents",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-Array-or-null_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Events"
+				],
+				"security": [
+					{
+						"jwt": [
+							"event:read"
+						]
+					}
+				],
+				"parameters": []
+			}
+		},
+		"/api/events/{eventId}": {
+			"get": {
+				"operationId": "GetEventById",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Event not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Events"
+				],
+				"security": [
+					{
+						"jwt": [
+							"event:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "eventId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateEvent",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Event not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Events"
+				],
+				"security": [
+					{
+						"jwt": [
+							"event:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "eventId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/EventUpdateRequest"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteEvent",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Event not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Events"
+				],
+				"security": [
+					{
+						"jwt": [
+							"event:delete"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "eventId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/events/{eventId}/confirm": {
+			"put": {
+				"operationId": "ConfirmEvent",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Event not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Events"
+				],
+				"security": [
+					{
+						"jwt": [
+							"event:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "eventId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/events/{eventId}/cancel": {
+			"put": {
+				"operationId": "CancelEvent",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Events"
+				],
+				"security": [
+					{
+						"jwt": [
+							"event:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "eventId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/events/{eventId}/complete": {
+			"put": {
+				"operationId": "MakeCompletedEvent",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EventResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Events"
+				],
+				"security": [
+					{
+						"jwt": [
+							"event:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "eventId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/equipments": {
+			"get": {
+				"operationId": "GetAllEquipments",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EquipmentResponse-Array-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Equipments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"equipment:read"
+						]
+					}
+				],
+				"parameters": []
+			},
+			"post": {
+				"operationId": "CreateEquipment",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EquipmentResponse-or-null_"
+								}
+							}
+						}
+					},
+					"409": {
+						"description": "equipment already exists",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EquipmentResponse_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Equipments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"equipment:create"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/equipmentCreateAttributes"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/equipments/{equipmentId}": {
+			"get": {
+				"operationId": "GetEquipmentById",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EquipmentResponse-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "equipment not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EquipmentResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Equipments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"equipment:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "equipmentId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateEquipment",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EquipmentResponse-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "equipment not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EquipmentResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Equipments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"equipment:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "equipmentId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/equipmentUpdateAttributes"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteEquipment",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "equipment not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EquipmentResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Equipments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"equipment:delete"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "equipmentId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/equipments/{equipmentId}/assign": {
+			"put": {
+				"operationId": "AssignEquipment",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EquipmentResponse-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "equipment not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Equipments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"equipment:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "equipmentId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"userId": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"userId"
+								],
+								"type": "object"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/equipments/{equipmentId}/return/{userId}": {
+			"put": {
+				"operationId": "ReturnEquipment",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EquipmentResponse-or-null_"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "equipment not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_EquipmentResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Equipments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"equipment:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "equipmentId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "userId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/cards": {
+			"get": {
+				"operationId": "GetAllCards",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CardListResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Cards"
+				],
+				"security": [
+					{
+						"jwt": [
+							"card:read"
+						]
+					}
+				],
+				"parameters": []
+			},
+			"post": {
+				"operationId": "CreateCard",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CardSingleResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Cards"
+				],
+				"security": [
+					{
+						"jwt": [
+							"card:create"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CreateCardRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/cards/available": {
+			"get": {
+				"operationId": "GetAvailableCards",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CardListResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Cards"
+				],
+				"security": [
+					{
+						"jwt": [
+							"card:read"
+						]
+					}
+				],
+				"parameters": []
+			}
+		},
+		"/api/cards/{id}": {
+			"get": {
+				"operationId": "GetCard",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CardSingleResponse"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Card not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CardSingleResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Cards"
+				],
+				"security": [
+					{
+						"jwt": [
+							"card:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateCard",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CardSingleResponse"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Card not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CardSingleResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Cards"
+				],
+				"security": [
+					{
+						"jwt": [
+							"card:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateCardRequest"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteCard",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CardSingleResponse"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Card not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CardSingleResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Cards"
+				],
+				"security": [
+					{
+						"jwt": [
+							"card:delete"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/cards/{id}/assign": {
+			"put": {
+				"operationId": "AssignCard",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CardSingleResponse"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Card not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CardSingleResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Cards"
+				],
+				"security": [
+					{
+						"jwt": [
+							"card:assign"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"userId": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"userId"
+								],
+								"type": "object"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/cards/{id}/return": {
+			"put": {
+				"operationId": "ReturnCard",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CardSingleResponse"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Card not found",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CardSingleResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Cards"
+				],
+				"security": [
+					{
+						"jwt": [
+							"card:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"userId": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"userId"
+								],
+								"type": "object"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/auth/login": {
+			"post": {
+				"operationId": "Login",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse__user-IUserResponse-or-null__"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse__user-IUserResponse-or-null__"
+								}
+							}
+						}
+					},
+					"403": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse__user-IUserResponse-or-null__"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Authentication"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/LoginRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/auth/me": {
+			"get": {
+				"operationId": "GetCurrentUser",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse__user-IUserResponse-or-null__"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse__user-IUserResponse-or-null__"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Authentication"
+				],
+				"security": [
+					{
+						"jwt": []
+					}
+				],
+				"parameters": []
+			}
+		},
+		"/api/auth/signup": {
+			"post": {
+				"operationId": "Signup",
+				"responses": {
+					"201": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse__user-IUserResponse-or-null--accessToken_63_-string--refreshToken_63_-string__"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse__user-IUserResponse-or-null--accessToken_63_-string--refreshToken_63_-string__"
+								}
+							}
+						}
+					},
+					"409": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse__user-IUserResponse-or-null--accessToken_63_-string--refreshToken_63_-string__"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Authentication"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/SignupRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/auth/check-email": {
+			"post": {
+				"operationId": "CheckEmail",
+				"responses": {
+					"200": {
+						"description": "Email check Successfull",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse__exists-boolean__"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Authentication"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"email": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"email"
+								],
+								"type": "object"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/auth/refresh": {
+			"post": {
+				"operationId": "RefreshToken",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse__accessToken-string--refreshToken-string__"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse__accessToken-string--refreshToken-string__"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Authentication"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"refreshToken": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"refreshToken"
+								],
+								"type": "object"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/auth/logout": {
+			"post": {
+				"operationId": "Logout",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Authentication"
+				],
+				"security": [
+					{
+						"jwt": []
+					}
+				],
+				"parameters": []
+			}
+		},
+		"/api/attendance": {
+			"get": {
+				"operationId": "GetAllAttendance",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/AttendanceListResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Attendance"
+				],
+				"security": [
+					{
+						"jwt": [
+							"attendance:read"
+						]
+					}
+				],
+				"parameters": []
+			}
+		},
+		"/api/attendance/{id}": {
+			"get": {
+				"operationId": "GetAttendanceById",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/AttendanceSingleResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Attendance"
+				],
+				"security": [
+					{
+						"jwt": [
+							"attendance:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateAttendance",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/AttendanceSingleResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Attendance"
+				],
+				"security": [
+					{
+						"jwt": [
+							"attendance:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateAttendanceRequest"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteAttendance",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/AttendanceSingleResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Attendance"
+				],
+				"security": [
+					{
+						"jwt": [
+							"attendance:delete"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/attendance/by-user/{userId}": {
+			"get": {
+				"operationId": "GetAttendanceByUserId",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/AttendanceListResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Attendance"
+				],
+				"security": [
+					{
+						"jwt": [
+							"attendance:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "userId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/attendance/by-date/{date}": {
+			"get": {
+				"operationId": "GetAttendanceByDate",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/AttendanceListResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Attendance"
+				],
+				"security": [
+					{
+						"jwt": [
+							"attendance:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "date",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/attendance/report/range/{startDate}/{endDate}": {
+			"get": {
+				"operationId": "GetAttendanceReport",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/AttendanceListResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Attendance"
+				],
+				"security": [
+					{
+						"jwt": [
+							"attendance:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "startDate",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "endDate",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/attendance/report/user/{userId}/{startDate}/{endDate}": {
+			"get": {
+				"operationId": "GetUserAttendanceReport",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/AttendanceListResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Attendance"
+				],
+				"security": [
+					{
+						"jwt": [
+							"attendance:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "userId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "startDate",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "endDate",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/attendance/{id}/checkout": {
+			"put": {
+				"operationId": "CheckOut",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/AttendanceSingleResponse"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Attendance"
+				],
+				"security": [
+					{
+						"jwt": [
+							"attendance:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CheckOutRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/appointments": {
+			"get": {
+				"operationId": "GetAllAppointments",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_AppointmentResponse-Array_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Appointments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"appointment:read"
+						]
+					}
+				],
+				"parameters": []
+			},
+			"post": {
+				"operationId": "CreateAppointment",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_AppointmentResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Appointments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"appointment:create"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/AppointmentCreateAttributes"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/appointments/user/{userId}": {
+			"get": {
+				"operationId": "GetAppointmentsByUserId",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_AppointmentResponse-Array_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Appointments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"appointment:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "userId",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/appointments/date/{date}": {
+			"get": {
+				"operationId": "GetAppointmentsByDate",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_AppointmentResponse-Array_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Appointments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"appointment:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "date",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/appointments/department/{department}": {
+			"get": {
+				"operationId": "GetAppointmentsByDepartment",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_AppointmentResponse-Array_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Appointments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"appointment:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "department",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/appointments/host/{host}": {
+			"get": {
+				"operationId": "GetAppointmentsByHost",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_AppointmentResponse-Array_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Appointments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"appointment:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "host",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/appointments/time/{time}": {
+			"get": {
+				"operationId": "GetAppointmentsByTime",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_AppointmentResponse-Array_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Appointments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"appointment:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "time",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/appointments/location/{location}": {
+			"get": {
+				"operationId": "GetAppointmentsByLocation",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_AppointmentResponse-Array_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Appointments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"appointment:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "location",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/appointments/for-visitor": {
+			"get": {
+				"operationId": "GetAppointmentForVisitor",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_any_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Appointments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"appointment:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "visitorId",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "idNumber",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "fullName",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "phone",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "department",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/appointments/{id}": {
+			"get": {
+				"operationId": "GetAppointmentById",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_AppointmentResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Appointments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"appointment:read"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateAppointment",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_AppointmentResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Appointments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"appointment:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateAppointmentAttributes"
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"operationId": "DeleteAppointment",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Appointments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"appointment:delete"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/appointments/confirm/{id}": {
+			"put": {
+				"operationId": "ConfirmAppointment",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_AppointmentResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Appointments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"appointment:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/appointments/cancel/{id}": {
+			"put": {
+				"operationId": "CancelAppointment",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_AppointmentResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Appointments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"appointment:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"cancelReason": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"cancelReason"
+								],
+								"type": "object"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/appointments/onhold/{id}": {
+			"put": {
+				"operationId": "OnholdAppointment",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_AppointmentResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Appointments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"appointment:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/appointments/reschedule/{id}": {
+			"put": {
+				"operationId": "RescheduleAppointment",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_AppointmentResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Appointments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"appointment:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"properties": {
+									"reasonToReschedule": {
+										"type": "string"
+									},
+									"appointmentLocation": {
+										"type": "string"
+									},
+									"timeDuration": {
+										"type": "string"
+									},
+									"appointmentTime": {
+										"type": "string"
+									},
+									"appointmentDate": {
+										"type": "string"
+									}
+								},
+								"required": [
+									"reasonToReschedule",
+									"appointmentLocation",
+									"timeDuration",
+									"appointmentTime",
+									"appointmentDate"
+								],
+								"type": "object"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/appointments/complete/{id}": {
+			"put": {
+				"operationId": "CompleteAppointment",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ServiceResponse_AppointmentResponse-or-null_"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"Appointments"
+				],
+				"security": [
+					{
+						"jwt": [
+							"appointment:update"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}

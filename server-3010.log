@@ -1,0 +1,9 @@
+[dotenv@17.3.1] injecting env (10) from .env -- tip: ⚡️ secrets for agents: https://dotenvx.com/as2
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+Connection to the database has been established successfully.
+Database connected successfully.
+127.0.0.1 - - [01/Jun/2026:09:43:38 +0000] "POST /api/faces/verify HTTP/1.1" 400 113 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.6456"
+Token extracted: No
+Token value: undefined...
+127.0.0.1 - - [01/Jun/2026:09:43:38 +0000] "POST /api/visitors/check-in HTTP/1.1" 401 1207 "-" "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.19041.6456"
