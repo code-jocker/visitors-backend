@@ -13,12 +13,13 @@ const config: Config = {
     callbackUrl: process.env.GOOGLE_CALLBACK_URL || 'http://localhost:3000/api/auth/google/callback',
   },
   database: {
+    // If DATABASE_URL is provided (e.g. Render/Postgres), it will override these.
     host: process.env.DB_HOST || "localhost",
     port: Number(process.env.DB_PORT || "3306"),
     user: process.env.DB_USER || "root",
     password: process.env.DB_PASSWORD || "",
     databaseName: process.env.DB_NAME || "",
-    dialect: "mysql",
+    dialect: process.env.DB_DIALECT || "mysql",
     logging: false,
   },
 
