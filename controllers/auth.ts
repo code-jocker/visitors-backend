@@ -65,7 +65,12 @@ export class AuthController extends Controller {
         @Body() credentials: LoginRequest,
         @Res() res: TsoaResponse<200 | 401 | 403, ServiceResponse<{ user: IUserResponse | null }>>
     ): Promise<void> {
-        const { email, password, phone } = credentials;
+        let { email, password, phone } = credentials;
+
+        // Normalize identifiers to match how they were stored during signup
+        if (typeof email === 'string') email = email.trim().toLowerCase();
+        if (typeof phone === 'string' || typeof phone === 'number') phone = String(phone).trim();
+
 
         if ((!email && !phone) || !password) {
             res(401, ServiceResponse.failure('Invalid credentials', { user: null }));
@@ -214,21 +219,22 @@ export class AuthController extends Controller {
 
             const user = await db.User.create(userData, { transaction: t });
 
-            //Find or create Role
+            //Find role
             const role = await db.Role.findOne({ where: { name: roleType }, transaction: t });
 
-            //If the role doesn't exist , return error 
+            //If the role doesn't exist, throw so transaction rolls back cleanly
             if (!role) {
-                res(400, ServiceResponse.failure('Invalid role type, Please set valid role:', { user: null }));
-                await t.rollback();
-                return;
+                throw new Error('Invalid role type');
             }
-            await user.addRole(role, { transaction: t });
 
-            // save user
+            await user.addRole(role, { transaction: t });
             await user.save({ transaction: t });
             return user;
+        }).catch((err) => {
+            // Let TSOA/express error handler handle it consistently
+            return undefined;
         });
+
 
         if (!newUser) {
             res(400, ServiceResponse.failure('Failed to create user', { user: null }));
